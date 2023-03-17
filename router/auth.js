@@ -2,10 +2,17 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
+const cors = require('cors');
 
 
 
 require('../database/conn');
+
+router.use(cors());
+
+process.on("uncaughtException", function (err) {
+  console.log("Caught exception: " + err);
+});
 
 router.get('/', (req, res) =>{
     res.send('home page router')
