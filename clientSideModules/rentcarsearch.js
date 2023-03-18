@@ -1,11 +1,12 @@
 const express = require('express');
+const authenticate = require('../middelware/authenticate');
 const router = express.Router();
 
 const Rentcar = require('../models/rentcarSchema');
 
 let getRentSearch;
   
-    module.exports =  router.post('/searchRentcar', async (req, res)=>{
+    module.exports =  router.post('/searchRentcar', authenticate, async (req, res)=>{
         const getText = req.body.searchText
         const x = getText
         console.log(x)
@@ -17,7 +18,7 @@ let getRentSearch;
         
     }),
 
-    module.exports =  router.get('/rentcarsearchCategory', async (req, res) =>{
+    module.exports =  router.get('/rentcarsearchCategory', authenticate, async (req, res) =>{
     
         try{
             

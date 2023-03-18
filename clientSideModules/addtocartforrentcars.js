@@ -9,7 +9,7 @@ const Rentcart = require('../models/rentcartSchema');
 let alert = require('alert');
 
 
-module.exports = router.post('/addrentcartocart', async(req, res)=>{
+module.exports = router.post('/addrentcartocart', authenticate, async(req, res)=>{
     const getItemId = req.body.itemId;
     const getRentHours = req.body.rentHours;
     const findUser = await User.findOne({_id: req.userID});

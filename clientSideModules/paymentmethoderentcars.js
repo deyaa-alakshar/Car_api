@@ -8,7 +8,7 @@ const {v4 : uuidv4} = require('uuid');
 
 const Rentcar = require('../models/rentcarSchema');
 
-module.exports = router.post('/stripeRentPay', async (req, res, next) =>{
+module.exports = router.post('/stripeRentPay', authenticate, async (req, res, next) =>{
     const {token, amount, idRentedcar, hoursRequired} = req.body;
     const idempotencyKey = uuidv4();
 

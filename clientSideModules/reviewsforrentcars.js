@@ -9,13 +9,13 @@ const Rentcarreviews = require('../models/rentcarreviewSchema');
 
 let getReviewRentcarId;
 
-module.exports =router.post('/sendReviewRentcarId', async (req, res) =>{
+module.exports =router.post('/sendReviewRentcarId', authenticate, async (req, res) =>{
     getReviewRentcarId = req.body.selectedcarId
 }),
 
 
 
-module.exports = router.get('/getRentcarReviews', async (req, res) =>{
+module.exports = router.get('/getRentcarReviews', authenticate, async (req, res) =>{
     const findUser = await User.findOne({_id: req.userID});
     const findcar = await Rentcar.findOne({_id: getReviewRentcarId.id});
 
