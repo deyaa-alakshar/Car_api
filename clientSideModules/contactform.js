@@ -5,7 +5,7 @@ const authenticate = require("../middelware/authenticate");
 
 const User = require('../models/userSchema');
 
-module.exports = router.post('/contact', authenticate, async (req, res) =>{
+module.exports = router.post('/contact', async (req, res) =>{
     try {
         // console.log(req) 
         const { name, email, phone, message } = req.body;

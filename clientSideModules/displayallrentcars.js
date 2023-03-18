@@ -5,7 +5,7 @@ const authenticate = require("../middelware/authenticate");
 const User = require('../models/userSchema');
 const Rentcar = require('../models/rentcarSchema');
 
-module.exports = router.get('/getRentcarData', authenticate, async (req, res) =>{
+module.exports = router.get('/getRentcarData', async (req, res) =>{
     const rentcarData = await Rentcar.find();
     try{
         

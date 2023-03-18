@@ -4,6 +4,6 @@ const router = express.Router();
 const authenticate = require("../middelware/authenticate");
 
 //getting user complete data
-module.exports = router.get('/getdata', authenticate, (req, res) =>{
+module.exports = router.get('/getdata', (req, res) =>{
     res.send(req.rootUser);
 });
