@@ -5,7 +5,7 @@ const authenticate = require("../middelware/authenticate");
 
 // Sign Out implementation
 
-module.exports = router.get('/signout', authenticate, (req, res)=>{
+module.exports = router.get('/signout',  (req, res)=>{
     console.log('user log out')
     
     res.clearCookie('jwtoken', {path: '/'})
