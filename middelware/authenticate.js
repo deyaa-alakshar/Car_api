@@ -20,8 +20,7 @@ const authenticate = async (req, res, next) =>{
 
     } catch (error) {
 
-        res.status(401).send('Unautorized: No token provided')
-        console.log(error);
+        next();
     }
 }
 
